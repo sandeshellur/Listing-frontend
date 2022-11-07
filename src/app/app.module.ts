@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PropertyComponent } from './property/property.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    NavbarComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+    PropertyComponent
   ],
   imports: [
     BrowserModule,
