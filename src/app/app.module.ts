@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PropertyComponent } from './property/property.component';
+import { ListingLocationComponent } from './listing-location/listing-location.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PropertyComponent } from './property/property.component';
     NavbarComponent,
     FooterComponent,
     PageNotFoundComponent,
-    PropertyComponent
+    PropertyComponent,
+    ListingLocationComponent
   ],
   imports: [
     BrowserModule,

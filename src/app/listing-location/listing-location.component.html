@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <div id="form-container" class="row justify-content-center my-3 my-lg-0">
+        <div class="col-12 col-md-8">
+            <form (ngSubmit)="searchByName(searchForm)" #searchForm="ngForm" id="filter-form"
+                class="row align-items-center px-lg-0 border-1 p-2 shadow">
+                <div class="col-12 col-sm-10 mx-auto">
+                    <input type="text" name="propName" ngModel class="form-control" id="exmpleFormControl1"
+                        placeholder="Serach By Name">
+                </div>
+                <div class="col-12 col-sm-2 mx-auto">
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn material-icons shadow-lg mx-auto py-3 px-3 d-none d-sm-block">
+                        SEARCH
+                    </button>
+                    <button type="submit" name="search" id="search-btn"
+                        class="btn shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
+                        search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
