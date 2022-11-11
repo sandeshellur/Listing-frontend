@@ -33,6 +33,7 @@ export class SigninComponent implements OnInit {
         signInForm.form.markAsPristine();
         this.auth.currentUser = res;
         this.auth.router.navigateByUrl('');
+        console.log("signed In")
       }
       else {
         this.errorFlag1 = true;

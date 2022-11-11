@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PropertyComponent } from './property/property.component';
 import { ListingLocationComponent } from './listing-location/listing-location.component';
+import { ListingNameComponent } from './listing-name/listing-name.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListingLocationComponent } from './listing-location/listing-location.co
     FooterComponent,
     PageNotFoundComponent,
     PropertyComponent,
-    ListingLocationComponent
+    ListingLocationComponent,
+    ListingNameComponent
   ],
   imports: [
     BrowserModule,
