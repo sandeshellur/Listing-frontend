@@ -14,7 +14,10 @@ export class AppComponent {
   constructor(public userService: UserServiceService,
               public locationService: LocationService,
               public categoryService: CategoryService) {
+    
     userService.setWebsiteReviews();
+    userService.signIn;
+    userService.signUp;
     categoryService.setCategories();
     locationService.setLocations();
 }

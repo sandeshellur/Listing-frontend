@@ -15,7 +15,7 @@ footer{
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 50px 50px 40px 50px;
+    padding: 50px 50px 1px 50px;
     margin-top: 80px;
 }
 .footer-distributed .footer-left,
@@ -30,7 +30,7 @@ footer{
 
 .footer-distributed h3{
     color: #fff;
-    font: normal 30px 'cookie', cursive;
+    font: normal bold 20px 'cookie', cursive;
     margin: 0;
 }
 
