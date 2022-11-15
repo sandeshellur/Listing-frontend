@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    
+
+    <div id="form-container">
+        <form (ngSubmit)="sendFormToListings(filterForm)" #filterForm="ngForm" id="filter-form" class="row">
+            <div class="btn-group" id="radio-btns">
+                <p>Search based on your priority</p>
+                <input type="radio" class="btn-check" name="listFor" ngModel value="buy" form="filter-form" 
+                    id="buy" autocomplete="off" checked required />
+                <label for="buy" class="btn">BUY</label>
+
+                <input type="radio" class="btn-check" name="listFor" ngModel value="rent" form="filter-form" id="rent"
+                    autocomplete="off" required />
+                <label for="rent" class="btn">RENT</label>
+            </div>
+            <div>
+                <div class="col">
+                    <div class="row" id="filter-part">
+                        <div class="col">
+                            <div class="input-group">
+                                <select name="cities" id="cities" ngModel class="form-select">
+                                    <option value="" selected disabled>Location</option>
+                                    <option value="{{location.id}}" *ngFor="let location of locationService.locations; let i = index">{{location.city}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <select name="categories" id="category" class="form-select">
+                                    <option value="" selected disabled>Category</option>
+                                    <option value="{{category.id}}" *ngFor="let category of categoryService.categories; let i = index">{{category.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <select name="sortBy" id="price" ngModel class="form-select">
+                                    <option value="" selected disabled>SortBy</option>
+                                    <option value="1">Price Low to High</option>
+                                    <option value="2">Price High to Low</option>
+                                    <option value="3">Ratings</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button type="submit" name="search" id="search-btn" class="btn ">SEARCH</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>FEATURED SPACE</h2>
+            </div>
+            <div class="next">
+                <a routerLink="/listingsbylocation/{{locationId}}" class="btn"><span>Explore More</span></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" *ngFor="let property of propertyService.properties.slice(0,4), let i = index">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{property.name}}
+                            <span class="badge">{{property.listFor}}</span>
+                        </h5>
+                        <div class="card-text">
+                            <div>{{property.category.name}}</div>
+                            <div class="content"><span><img src="../../assets/Rounded.png" alt="arrow" class="img-fluid"></span>{{property.address.line1}} {{property.address.line2}}</div>
+                            <div class="content">{{property.address.pincode}}</div>
+                        </div>
+                        <a routerLink="/property/{{property.id}}" class="btn">Have a Look</a>
+                    </div>
+                    <span *ngIf="i==2">New</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <a routerLink="/listingsbylocation/{{locationId}}" class="btn">Explore More Properties</a>
+            </div>
+        </div>
+    </div>
+</div>

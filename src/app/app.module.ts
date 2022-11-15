@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PropertyComponent } from './property/property.component';
 import { ListingLocationComponent } from './listing-location/listing-location.component';
 import { ListingNameComponent } from './listing-name/listing-name.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListingNameComponent } from './listing-name/listing-name.component';
     PageNotFoundComponent,
     PropertyComponent,
     ListingLocationComponent,
-    ListingNameComponent
+    ListingNameComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

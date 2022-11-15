@@ -7,24 +7,10 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserServiceService {
-  currentUser: User;
   reviews: string[][];
   
   constructor(public http: HttpClient, public router: Router) {
-    this.currentUser = new User();
     this.reviews = [];
-  }
-
-  signUp(user: any) {
-    return this.http.post<User>('http://localhost:8080/signup', user);
-  }
-
-  signIn(user: any) {
-    return this.http.post<User>('http://localhost:8080/login', user);
-  }
-
-  signOut() {
-    this.currentUser = new User();
   }
 
   setWebsiteReviews() {

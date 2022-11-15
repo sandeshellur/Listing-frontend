@@ -16,8 +16,6 @@ export class AppComponent {
               public categoryService: CategoryService) {
     
     userService.setWebsiteReviews();
-    userService.signIn;
-    userService.signUp;
     categoryService.setCategories();
     locationService.setLocations();
 }

@@ -1,0 +1,41 @@
+form {
+    background-color:rgb(27, 114, 102) ;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 10px 10px 10px;
+}
+
+form .btn-group{
+    height: 55px;
+    width: 50%;
+    margin-top: 2px;
+    position: relative;
+}
+
+form .btn-group input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+}
+
+form .btn-group .btn {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 22px;
+  padding: 12px 18px;
+  line-height: 1.1;
+  font-weight: bold;
+  transform: translateY(-0.195em);
+}
+
+form .col .col .btn {
+    background-color: white;
+    border-radius: 22px;
+    padding: 6px 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
