@@ -1,1 +1,91 @@
-<p>property works!</p>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                <h2 class="titledes">{{propertyService.property.name}}</h2>
+            </div>
+            <h6 class="featuredes">
+                <span class="me-3">
+                    <img src="../../assets/Rounded.png" alt="arrow" class="img-fluid" />
+                </span>
+                {{propertyService.property.address.line1+ " " + propertyService.property.address.line2}}
+            </h6>
+            <h6 class="titledes">Rs. {{propertyService.property.price}}</h6>
+            <div>
+                <div>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow" class="img-fluid" style="height: 20px;" />
+                        </span>
+                        Finished Baths
+                    </h5>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow" class="img-fluid" style="height: 20px;">
+                        </span>
+                        Spacious Bedrooms
+                    </h5>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid" style="height: 20px;">
+                        </span>
+                        Luxurious Livings
+                    </h5>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon awesome-parking.png" alt="arrow" class="img-fluid" style="height: 20px;">
+                        </span>
+                        Ample Parking Space
+                    </h5>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon map-park.png" alt="arrow" class="img-fluid" style="height: 20px;">
+                        </span>
+                        Play Area
+                    </h5>
+                    <h5 class="aminities">
+                        <span class="me-3">
+                            <img src="../../assets/newimglisting/Icon map-tennis.png" alt="arrow" class="img-fluid" style="height: 20px;">
+                        </span>
+                        Tennis Court
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <!----Action btn-->
+        <div>
+            <div>
+                <a routerLink="/wishlist/{{auth.currentUser.userId}}" class="btn" type="button">
+                    WISHLIST
+                    <span>
+                        <img src="../../assets/newimglisting/Icon ionic-ios-cart.png" alt="arrow" style="height: 15px;">
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a routerLink="/bookings/{{auth.currentUser.userId}}" type="button" class="btn">
+                    BUY NOW
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h5>REVIEW</h5>
+            <form (ngSubmit) = "userReview(reviewForm)" #reviewForm="ngForm">
+                <div>
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" name="username" ngModel id="exampleInputEmail1" class="form-control" placeholder="USERNAME">
+                </div>
+                <div>
+                    <label for="exampleFormControlTextarea1" ngModel class="form-label"></label>
+                    <textarea name="review" id="exampleFormControlTextarea1" rows="3" class="form-control" placeholder="REVIEW"></textarea>
+                </div>
+                <a type="button" class="btn" style="border-radius: 20px;">
+                    SUBMIT
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

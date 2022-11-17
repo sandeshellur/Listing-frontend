@@ -44,17 +44,3 @@ form .col .btn {
 .container .justify .aminities .tennis{
     padding: 0 0 10px 0;
 }
-
-.container .justify .aminities .col .row .col .enter .btn{
-    background-color: darkcyan;
-    border-radius: 20px;
-    padding: 6px 30px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition-duration: 0.3s;
-}
-
-.row .col .card .row .col .col .card-body .row .col .row .enter{
-    background-color: darkcyan;
-}
