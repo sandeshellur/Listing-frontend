@@ -1,23 +1,73 @@
 <div class="container mt-3">
-    <div id="form-container" class="row justify-center my-3 my-lg-0">
-        <div class="col-12 col-md-8">
+    <div id="form-container" class="row">
+        <div class="col">
             <form (ngSubmit)="searchByName(searchForm)" #searchForm="ngForm" id="filter-form"
-                class="row align-items-center px-lg-0 border-1 p-2 shadow">
-                <div class="col-12 col-sm-10 mx-auto">
-                    <input type="text" name="propName" ngModel class="form-control" id="exampleFormControlInput1"
-                        placeholder="Search By Name">
+                class="row">
+                <div class="col">
+                    <input type="text" name="propName" ngModel class="form-control" id="exampleFormControlInput1" placeholder="Search By Name">
                 </div>
-                <div class="col-12 col-sm-2 mx-auto">
-                    <button type="submit" name="search" id="search-btn"
-                        class="btn material-icons shadow-lg mx-auto py-3 px-3 d-none d-sm-block">
-                        search
-                    </button>
-                    <button type="submit" name="search" id="search-btn"
-                        class="btn-shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
-                        search
+                <div class="col">
+                    <button type="submit" name="search" id="search-btn" class="btn">
+                        SEARCH
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let property of propertyService.properties.slice(1)">
+            <div class="card">
+                <img src="{{property.images[0].imageurl}}" class="card" alt="buildingimg" />
+                <div class="card-body">
+                    <div>
+                        <a class="cardAminity" routerLink="/property/{{propertyService.properties[0].id}}">
+                            <h5 class="card-title">{{propertyService.properties[0].name}}</h5>
+                        </a>
+                        <h6 class="featuredes">
+                            <span>
+                                <img src="../../assets/Rounded.png" alt="arrow" class="img-fluid">
+                            </span>
+                            {{property.address.line1 + " " + property.address.line2}}</h6>
+                        <h4 class="cardAminity">
+                            {{property.price}}
+                        </h4>
+                        <button type="button" routerLink="/bookings" class="btn">
+                            BUY NOW
+                            <span>
+                                <img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid" />
+                            </span>
+                        </button>
+                    </div>
+                    <div>
+                        <h5 class="aminities">
+                            <span class="px-3">
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow" class="img-fluid" />
+                            </span>
+                            Finished Baths
+                        </h5>
+                        <h5 class="aminities">
+                            <span>
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow" class="img-fluid" />
+                            </span>
+                            Spacious Bedrooms
+                        </h5>
+                        <h5 class="aminities">
+                            <span>
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid" />
+                            </span>
+                            Luxuries Livings
+                        </h5>
+                        <div>
+                            <span *ngFor="let star of stars.slice(0,property.avgRating), let i=index"
+                                [class]="star">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

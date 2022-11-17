@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { CategoryService } from '../category.service';
 import { DataSharingService } from '../data-sharing.service';
 import { LocationService } from '../location.service';
@@ -15,7 +16,7 @@ import { UserServiceService } from '../user-service.service';
 export class ListingLocationComponent implements OnInit {
   [x: string]: any;
 
-  propName: string = '';
+  propLocation: string = '';
   stars: string[] = [];
 
   constructor(public locationService: LocationService,
@@ -23,7 +24,7 @@ export class ListingLocationComponent implements OnInit {
               public propertyService: PropertyService,
               public dataSharing: DataSharingService,
               public route: ActivatedRoute,
-              public auth: UserServiceService,
+              public auth: AuthService,
               public router: Router) { }
 
   ngOnInit(): void {
@@ -45,9 +46,9 @@ export class ListingLocationComponent implements OnInit {
 
   }
 
-  searchByName(searchForm: any) {
-    let name = searchForm.value.propName;
-    this.router.navigateByUrl("/listingnyname/" + name)
+  searchByLocation(searchForm: any) {
+    let location = searchForm.value.propLocation;
+    this.router.navigateByUrl("/listingbylocation/" + location)
   }
 
   setProperties() {

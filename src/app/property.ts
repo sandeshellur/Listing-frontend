@@ -1,5 +1,6 @@
 import { Address } from "./address";
 import { Category } from "./category";
+import { Image } from "./image";
 
 export class Property {
     id: number;
@@ -12,6 +13,7 @@ export class Property {
     category: Category;
     locationId: number;
     listFor: string;
+    images:Image[];
 
     constructor() {
         this.id = 0;
@@ -24,5 +26,6 @@ export class Property {
         this.locationId = 0;
         this.category = {id:0, name:''};
         this.listFor = '';
+        this.images = [];
     }
 }

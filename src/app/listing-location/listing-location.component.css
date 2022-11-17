@@ -1,71 +1,60 @@
-#feat-head {
-    background-color: #e0ebed;
-  }
-  
-  .heading-big {
-    color: #016450;
-    font-size: 2rem;
-    letter-spacing: 5px;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    line-height: 2rem;
-  }
-  
-  #filter-form {
-    background-color: #ffffff;
-    border-radius: 15px;
-  }
-  
-  #search-btn {
-    background-color: #016450;
-    color: #ffffff;
-  }
-  
-  .heading-med {
-    letter-spacing: 5px;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-  }
-  
-  .card-price {
-    font-size: 1.3rem;
-  }
-  
-  .aminities {
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 2px;
-    color: #999999;
-    font-size: 14px;
-  }
-  
-  .btn-green {
-    background-color: #016450;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    color: #ffffff;
-  }
-  
-  .btn-lgrey {
-    background-color: #e0ebed;
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-    letter-spacing: 1.5px;
-    color: #016450;
-  }
-  
-  .btn-content {
-    font-family: "Segoe UI";
-    src: local("Segoe UI Bold");
-    font-size: 14px;
-  }
-  
-  .checked {
-    color: orange;
-  }
+form {
+    padding: 10px 0 0 0;
+}
+
+form .col input {
+    border-radius: 20px;
+    border-color: rgba(50, 9, 73, 0.76);
+}
+
+form .col .btn {
+    background-color: darkcyan;
+    border-radius: 20px;
+    padding: 6px 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.container .justify .aminities {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container .justify .aminities .shower{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .bed{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .living{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .park{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .play{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .tennis{
+    padding: 0 0 10px 0;
+}
+
+.container .justify .aminities .col .row .col .enter .btn{
+    background-color: darkcyan;
+    border-radius: 20px;
+    padding: 6px 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.row .col .card .row .col .col .card-body .row .col .row .enter{
+    background-color: darkcyan;
+}

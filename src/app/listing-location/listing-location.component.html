@@ -1,23 +1,167 @@
-<div class="container mt-3">
-    <div id="form-container" class="row justify-content-center my-3 my-lg-0">
-        <div class="col-12 col-md-8">
-            <form (ngSubmit)="searchByName(searchForm)" #searchForm="ngForm" id="filter-form"
-                class="row align-items-center px-lg-0 border-1 p-2 shadow">
-                <div class="col-12 col-sm-10 mx-auto">
-                    <input type="text" name="propName" ngModel class="form-control" id="exmpleFormControl1"
-                        placeholder="Serach By Name">
+<div class="container">
+    <div id="form-container" class="row">
+        <div class="col">
+            <form (ngSubmit)="searchByLocation(searchForm)" #searchForm="ngForm" id="filter-form" class="row">
+                <div class="col">
+                    <input type="text" name="propLocation" ngModel class="form-control" id="exmpleFormControl1"
+                        placeholder="Serach By Location">
                 </div>
-                <div class="col-12 col-sm-2 mx-auto">
-                    <button type="submit" name="search" id="search-btn"
-                        class="btn material-icons shadow-lg mx-auto py-3 px-3 d-none d-sm-block">
+                <div class="col">
+                    <button type="submit" name="search" id="search-btn" class="btn">
                         SEARCH
-                    </button>
-                    <button type="submit" name="search" id="search-btn"
-                        class="btn shadow-lg py-3 px-3 my-2 w-100 d-block d-sm-none">
-                        search
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="feat-box">
+    <div class="row">
+        <div class="col" id="feat-head">
+            <p>FEATURED</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="row">
+                    <div class="col">
+                        <img src="{{propertyService.properties[0].images[0].imageurl[0]}}" alt="img" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-rounded">
+                                    <a routerLink="/property/{{propertyService.properties[0].id}}">
+                                        <h5 class="card-title">{{propertyService.properties[0].name}}</h5>
+                                    </a>
+                                    <h6><span class="me-3"><img src="../../assets/Rounded.png" alt="arrow" class="img-fluid"></span>
+                                        {{propertyService.properties[0].address.line1 +" " + propertyService.properties[0].address.line2}}
+                                    </h6>
+                                    <p class="card-price">{{propertyService.properties[0].price}}</p>
+
+                                    <div class="row justify">
+                                        <div class="col aminities">
+                                            <div class="shower">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow" class="img-fluid" style="height: 20px"/>
+                                                </span>
+                                                Finished Baths
+                                            </div>
+                                            <div class="bed">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow" class="img-fluid" style="height: 20px"/>
+                                                </span>
+                                                Bedrooms
+                                            </div>
+                                            <div class="living">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid" style="height: 20px"/>
+                                                </span>
+                                                Luxuries Livings
+                                            </div>
+                                            <div class="park">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon awesome-parking.png" alt="arrow" class="img-fluid" style="height: 20px"/>
+                                                </span>
+                                                Parking Space
+                                            </div>
+                                            <div class="play">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon map-park.png" alt="Play Area" class="img-fluid" style="height: 20px"/>
+                                                </span>
+                                                Play Area
+                                            </div>
+                                            <div class="tennis">
+                                                <span class="me-3">
+                                                    <img src="../../assets/newimglisting/Icon map-tennis.png" alt="arrow" class="img-fluid" style="height: 20px"/>                                   
+                                                </span>
+                                                Tennis Court
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span *ngFor="let star f stars.slice(0, propertyService.properties[0].avgRating), let i=index" [class]="star"></span>
+                                        </div>
+                                        <div class="col enter">
+                                            <button type="button" routerLink="/wishlist/{{auth.currentUser.userId}}" class="btn">
+                                                WISHLIST
+                                            </button>
+                                            <button type="button" routerLink="/bookings/{{auth.currentUser.userId}}" class="btn">
+                                                BUY NOW
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let property of propertyService.properties.slice(1)">
+            <div class="card">
+                <img src="{{property.images[0].imageurl}}" class="card" alt="buildingimg" />
+                <div class="card-body">
+                    <div>
+                        <a class="cardAminity" routerLink="/property/{{propertyService.properties[0].id}}">
+                            <h5 class="card-title">{{propertyService.properties[0].name}}</h5>
+                        </a>
+                        <h6>
+                            <span>
+                                <img src="../../assets/Rounded.png"
+                                    alt="arrow" class="img-fluid">
+                            </span>
+                                {{property.address.line1 + " " +
+                                property.address.line2}}
+                        </h6>
+                        <h4>
+                            {{property.price}}
+                        </h4>
+                        <button type="button" routerLink="/bookings">
+                            BUY NOW
+                            <span>
+                                <img src="../../assets/rightarrow.png" alt="arrow" class="img-fluid"/>
+                            </span>
+                        </button>
+                    </div>
+                    <div>
+                        <h5>
+                            <span>
+                                <img src="../../assets/newimglisting/Icon awesome-shower.png" alt="arrow" class="img-fluid" />
+                            </span>
+                            Finished Baths
+                        </h5>
+                        <h5 class="aminities">
+                            <span>
+                                <img src="../../assets/newimglisting/Icon ionic-ios-bed.png" alt="arrow"
+                                    class="img-fluid"/>
+                            </span>
+                            Spacious Bedrooms
+                        </h5>
+                        <h5 class="aminities">
+                            <span>
+                                <img src="../../assets/newimglisting/Icon ionic-md-tv.png" alt="arrow" class="img-fluid" />
+                            </span>
+                            Luxuries Livings
+                        </h5>
+                        <div>
+                            <span *ngFor="let star of stars.slice(0,property.avgRating), let i=index"
+                                [class]="star">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
