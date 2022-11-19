@@ -16,6 +16,7 @@ import { ListingNameComponent } from './listing-name/listing-name.component';
 import { HomeComponent } from './home/home.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ListingComponent } from './listing/listing.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     ListingNameComponent,
     HomeComponent,
     BookingsComponent,
-    WishlistComponent
+    WishlistComponent,
+    ListingComponent
   ],
   imports: [
     BrowserModule,
