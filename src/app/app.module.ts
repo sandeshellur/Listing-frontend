@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ListingComponent } from './listing/listing.component';
+import { CommonModule } from '@angular/common';
+import { ListingTypeComponent } from './listing-type/listing-type.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import { ListingComponent } from './listing/listing.component';
     HomeComponent,
     BookingsComponent,
     WishlistComponent,
-    ListingComponent
+    ListingComponent,
+    ListingTypeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
