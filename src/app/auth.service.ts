@@ -22,7 +22,8 @@ export class AuthService {
     return this.http.post<User>('http://localhost:8080/login', user);
   }
 
-  signOut() {
-    this.currentUser = new User();
+  signOut(user: any) {
+    //this.currentUser = new User();
+    return this.http.post<User>('http://localhost:8080/login', user);
   }
 }
